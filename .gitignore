@@ -11,6 +11,9 @@ capybara-*.html
 rerun.txt
 pickle-email-*.html
 
+#Mac
+.DS_Store
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
