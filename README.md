@@ -50,7 +50,7 @@
 
 ### フロントエンド
 - Vue.JS
-    - [ソースフォルダはこちら](./rails_app/vue)
+    - [ソースフォルダはこちら](./rails_app/vue/components/)
 ### サーバーサイド
 - Rails
     - 共同編集機能には、Action Cableを利用
