@@ -4,7 +4,7 @@
 - サービスURL
     - https://www.whiteio.net
 
-### 注意:
+### ご注意:
 - このGitリポジトリはソースコードを一部削除しています。そのため、**クローンしても起動できません**
     - 実際のソースは、開発用のリポジトリで別途管理しています。
 
@@ -50,6 +50,7 @@
 
 ### フロントエンド
 - Vue.JS
+    - [ソースフォルダはこちら](./rails_app/vue)
 ### サーバーサイド
 - Rails
     - 共同編集機能には、Action Cableを利用
@@ -68,11 +69,14 @@
         - 開発用: `npm run dev`
         - 本番用: `npm run prod`
     - 開発時は、webpack-dev-serverを使用
+    - [Webpackの設定](./rails_app/webpack.config.js)
+    - [Rails側の設定](./rails_app/app/helpers/webpack_bundle_helper.rb)
 
 - Docker
     - Rails, Redis, PostgreSQLの3つのコンテナを使用
     - ローカルフォルダをマウント
         - ローカル上のファイルを編集 -> コンテナ内のファイルに即時反映
+    - [docker-compose](./docker-compose.yml)
 
 - Heroku
     - AWS, AzureのようなPaaSのこと
@@ -101,7 +105,7 @@
 ```
 
 - 下記の記事の手順を踏んで、Herokuへデプロイする。
-    - [Dockerで作成したRailsアプリをHerokuにデプロイ(私の執筆記事)](https://qiita.com/NA_simple/items/57ad10717568fea2160b)
+    - [Dockerで作成したRailsアプリをHerokuにデプロイ(自ら執筆)](https://qiita.com/NA_simple/items/57ad10717568fea2160b)
 
 ## ✉️コンタクト
 - 設計・開発業務のご依頼
