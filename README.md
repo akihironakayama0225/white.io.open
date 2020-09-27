@@ -15,7 +15,8 @@
 - 本サービスは、ブレインストーミングやメモといった、アイディアを書き留める段階での利用を想定している。
     - そのため、複数人での共同編集機能をベースとし、シンプルで直感的な操作ができるUIを目指した。
 
-    <img src="./images_for_readme/discuss.png" width="600px">
+    <a href="https://www.whiteio.net"><img src="./images_for_readme/discuss.png" width="600px"></a>
+    - ※ 画像クリックでサイトにジャンプ
 
 ## 実装機能
 - 図形生成・編集機能
