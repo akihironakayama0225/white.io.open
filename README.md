@@ -15,7 +15,7 @@
 - 本サービスは、ブレインストーミングやメモといった、アイディアを書き留める段階での利用を想定している。
     - そのため、複数人での共同編集機能をベースとし、シンプルで直感的な操作ができるUIを目指した。
 
-    <img src="https://github.com/akihironakayama0225/white.io.open/blob/edit/images_for_readme/discuss.png?raw=true" width="400px">
+    <img src="./images_for_readme/discuss.png" width="600px">
 
 ## 実装機能
 - 図形生成・編集機能
@@ -23,11 +23,11 @@
     - マウスドラッグで作図でき、拡大・移動が可能
     - テキストのフォントサイズもドラッグで変更可能
 
-    <img src="https://github.com/akihironakayama0225/white.io.open/blob/edit/images_for_readme/shapes.png?raw=true" width="300px">
+    <img src="./images_for_readme/shapes.png" width="300px">
 - 図形のグループ操作
     - 図形をまとめて移動・拡大・削除などが可能
 
-    <img src="https://github.com/akihironakayama0225/white.io.open/blob/edit/images_for_readme/groups.png?raw=true" width="300px">
+    <img src="./images_for_readme/groups.png" width="300px">
 - 元に戻す・やり直し機能
     - 直前の操作を戻したり、やり直すことが可能
 - 共同編集機能
@@ -37,15 +37,15 @@
     - Google Oauth2 でのログインに統一
     - 従来のメールアドレス&パスワード方式を排除
 
-        <img src="https://github.com/akihironakayama0225/white.io.open/blob/edit/images_for_readme/Oauth2.png?raw=true" width="200px">
+        <img src="./images_for_readme/Oauth2.png" width="200px">
 - お問合わせ機能
     - お問い合わせフォーム入力内容を管理者にメールで送信
 
-        <img src="https://github.com/akihironakayama0225/white.io.open/blob/edit/images_for_readme/contact.png?raw=true" width="200px">
+        <img src="./images_for_readme/contact.png" width="300px">
 
 ## 使用技術
 
-<img src="https://github.com/akihironakayama0225/white.io.open/blob/edit/images_for_readme/icons.png?raw=true" width="300px">
+<img src="./images_for_readme/icons.png" width="400px">
 
 ### フロントエンド
 - Vue.JS
