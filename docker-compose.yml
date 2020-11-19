@@ -1,0 +1,37 @@
+version: '3'
+
+services: 
+  db:
+    container_name: postgress_db
+    image: postgres:latest
+
+  redis:
+    # https://qiita.com/pokohide/items/7397b92a188da841b435
+    container_name: redis_server
+    image: redis:6.0-rc3
+    volumes:
+      - ./redis:/data
+    command: redis-server --appendonly yes
+  
+  web:
+    container_name: rails_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment: 
+      REDIS_URL: redis://redis:6379
+
+    ports:
+      # rails = 3000, webpack = 3035
+      - '3000:3000'
+      - '3035:3035'
+    volumes:
+      - ./rails_app:/app
+
+    depends_on:
+      - db
+      - redis
+    tty: true
+    stdin_open: true
+    
+    command: bundle exec rails server -p 3000 -b '0.0.0.0' # -e production
