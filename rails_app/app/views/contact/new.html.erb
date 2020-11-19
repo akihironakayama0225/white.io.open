@@ -1,0 +1,86 @@
+<div class="contact-new-root">
+  <div class="content-container">
+    <h2>お問い合わせ</h2>
+    <h3 id="red-text"><%= @input_error %></h3>
+  </div>
+
+  <%= form_for(@form_input, url: "/contact/confirm", method: :post) do |f| %>
+    <div class="content-container">
+      <div class="item">
+        <%= label_tag :name, "お名前", class: "item-label" %><br>
+        <%= f.text_field :name, size: 20, class: "inputs" %>
+      </div>
+      <div class="item">
+        <%= label_tag :mail, "メールアドレス", class: "item-label" %><br>
+        <%= f.email_field :mail, size: 20, class: "inputs" %>
+      </div>
+      <div class="item">
+        <%= label_tag :purpose, "ご用件", class: "item-label" %><br>
+        <%= select_tag :purpose_index, options_for_select({
+                      "ご意見・ご要望": 1, 
+                      "不具合(バグ)報告": 2, 
+                      "Webページ制作のご依頼": 3, 
+                      "その他": 4}, 1), include_blank: false ,class: "inputs"%>
+      </div>
+      <div class="item">
+        <%= label_tag :comment, "ご詳細", class: "item-label" %><br>
+        <%= f.text_area :comment, :maxlength => "300",style: :"height:40vh;", class: "inputs", placeholder: "より良いサービスのため、あなたのご意見をお待ちしております。" %>
+      </div>
+    </div>
+    <div class="content-container">
+      <%= f.submit "内容を確認する", class: "submit"%>
+    </div>
+  <% end %>
+</div>
+
+<div style="height:100px"></div>
+
+
+<style type="text/css">
+.field_with_errors{
+  background-color: #FF6666;
+}
+#red-text{
+  color: red;
+}
+
+*{
+  text-align:center;
+}
+
+.content-container{
+  width:80%;
+  max-width: 700px;
+  padding:10px;
+  margin: auto;
+  margin-top:10px;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: lightgray;
+}
+
+.item{
+  margin-top:10px;
+}
+.item-label{
+  font-weight: bold;
+}
+
+.inputs{
+  width: 80%;
+  font-size: 14px;
+  text-align: left;
+  border: solid 1px gray;
+  border-radius: 3px;
+}
+
+.submit{
+  width:80%;
+  max-width:300px;
+  font-size: 16px;
+  color: white;
+  background-color: gray;
+  border: none;
+  border-radius: 3px;
+}
+</style>

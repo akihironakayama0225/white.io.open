@@ -1,0 +1,107 @@
+<div class="container-fluid">
+  <div class="content-container">
+    <h2>お問い合わせ内容確認</h2>
+  </div>
+
+  <%= form_tag({controller: :contact, action: :send_mail}, class: :hoge) do %>
+    <div class="content-container">
+      <div class="item">
+        <%= label_tag :name, "お名前", class: "item-label" %><br>
+        <p><%= @form_input.name %></p>
+      </div>
+      <div class="item">
+        <%= label_tag :mail, "メールアドレス", class: "item-label" %><br>
+        <p><%= @form_input.mail %></p>
+      </div>
+      <div class="item">
+        <%= label_tag :purpose, "ご用件", class: "item-label" %><br>
+        <p><%= @form_input.purpose %></p>
+      </div>
+      <div class="item">
+        <%= label_tag :comment, "ご詳細", class: "item-label" %><br>
+        <p class="comments"><%= simple_format(@form_input.comment) %></p>
+      </div>
+    </div>
+      <%= submit_tag "送信する", id: "btSub" ,onclick: "disable();"%>
+  <% end %>
+  <div class="content-container">
+  <button class="back" onClick="history.back(); return false;">修正する</button>
+  <button class="submit" id="trigger" onClick="disable();">送信する</button>
+  </div>
+</div>
+
+<div style="height:100px"></div>
+
+
+<script>
+function disable(){
+  var bt = document.getElementById("btSub");
+  var tr = document.getElementById("trigger");
+  bt.click();
+  tr.innerHTML = "送信中...";
+  tr.setAttribute("disabled", true);
+  tr.style.backgroundColor = 'gray';
+}
+</script>
+
+<style type="text/css">
+#btSub{
+  display:none;
+}
+.field_with_errors{
+  background-color: red;
+}
+#red-text{
+  color: red;
+}
+
+*{
+  text-align:center;
+}
+
+body {
+  background-color: transparent;
+}
+
+.content-container{
+    width:80%;
+    max-width: 700px;
+    padding:10px;
+    margin: auto;
+    margin-top:10px;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: lightgray;
+}
+
+.item{
+  margin-top:10px;
+}
+.item-label{
+  font-weight: bold;
+}
+
+.comments{
+  width: 80%;
+  font-size: 16px;
+  text-align: left;
+}
+
+.back{
+  width:40%;
+  font-size: 16px;
+  color: white;
+  background-color: gray;
+  border: none;
+  border-radius: 3px;
+}
+
+.submit{
+  width:40%;
+  font-size: 16px;
+  color: white;
+  background-color: red;
+  border: none;
+  border-radius: 3px;
+}
+</style>

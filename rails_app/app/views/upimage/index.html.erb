@@ -1,0 +1,9 @@
+<h1>Upimage#index</h1>
+<p>Find me in app/views/upimage/index.html.erb</p>
+
+<%= form_tag({action: :upload}, multipart: true) do %>
+<label> ファイルを指定
+  <%= file_field_tag :upimg, size: 100 %>
+</label>
+<%= submit_tag 'アップロード'%>
+<% end %>
